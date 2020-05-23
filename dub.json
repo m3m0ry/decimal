@@ -1,10 +1,11 @@
 {
     "name": "decimal",
     "authors": [
+        "Jan Hönig",
         "rumbu13"
     ],
-    "description": "IEEE-754-2008 compliant decimal data type.",
-    "copyright": "Copyright © 2017 rumbu13",
+    "description": "IEEE-754-2019 compliant decimal data type.",
+    "copyright": "Copyright © 2017-2020 Jan Hönig, rumbu13",
     "license": "boost",
 	"sourcePaths": [ "src"],
     "configurations": [
