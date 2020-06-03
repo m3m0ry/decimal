@@ -258,6 +258,10 @@ string getToken(int type, char[] s, bool raw = false)
         case instring:
             return s.idup;
         case inclass:
+            if (s[0] == '[')
+            {
+                return prettyClass(to!int(s[1 .. $-1])); // TODO likely this does nothing
+            }
             return prettyClass(to!int(s));
         case 7:
             if (s == "0")
