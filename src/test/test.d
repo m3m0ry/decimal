@@ -1562,8 +1562,8 @@ int main(string[] argv)
     funcs.rehash();
 
     
-    string input = "..\\src\\test\\readtest.in";
-    string output = "..\\src\\test\\intel.d";
+    string input = "../src/test/readtest.in";
+    string output = "../src/test/intel.d";
 
     auto f = File(output, "w");
     int i, j;
@@ -1734,7 +1734,7 @@ int main(string[] argv)
             f.writeln("\t{");
             if (t.func != "equ")
             {
-                f.writeln("\t\tDecimalControl.resetFlags()");
+                f.writeln("\t\tDecimalControl.resetFlags();");
             }
             f.writeln(t.assertion("\t\t"));
             f.writeln("\t}");

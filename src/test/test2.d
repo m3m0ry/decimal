@@ -9,7 +9,7 @@ import std.algorithm;
 import std.traits;
 import decimal;
 
-immutable string inputFileName = "..\\src\\test\\readtest.in";
+immutable string inputFileName = "../src/test/readtest.in";
 
 struct NumberedRange(R)
 {
@@ -309,6 +309,11 @@ bool test1(string func, I, O, E)(E element, out string errorMessage, const bool 
 
     static if (isDecimal!O || isFloatingPoint!O)
     {
+        static if (isFloatingPoint!O)
+        {
+           static import std.math; 
+           alias isNaN = std.math.isNaN;
+        }
         if (element.func.endsWith("_from_string") && isNaN(expected))
         {
             //intel considers enough to return nan on unparsable strings and does not raise invalidOp
